@@ -1,2 +1,3 @@
 # check-code
-a graphic check code by python using PIL
+采用python语言，利用PIL包实现的图片验证码。
+客户端发起请求，服务器生成一个包含字符串的图片和相应字符串，将图片返回客户端，字符串则在服务器端用于合法性检测。
