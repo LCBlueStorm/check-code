@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <span class="">
+        <img src="http://localhost:8080/code" id="check_code" onclick="createCode('check_code')">
+        <input type="text" onfocus="createCode('check_code')">
+    </span>
+    <input type="button" value="评论" onclick="test()"/>
+
+<script>
+    function createCode(check_code){
+        var rand_str = randStr(100);
+        //alert(rand_str);
+        target = document.getElementById(check_code);
+        target.src="http://localhost:8080/code?"+rand_str;
+    }
+
+    function randStr(length){
+        var selectChar = new Array(0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j',
+        'k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');//所有候选组成验证码的字符，当然也可以用中文的
+        var result = "CheckCode";
+        for(var i=0;i<length;i++){
+            var charIndex = Math.floor(Math.random()*36);
+            result +=selectChar[charIndex];
+        }
+        return result;
+    }
+    function test(){
+        alert("testing");
+    }
+</script>
+</body>
+</html>
